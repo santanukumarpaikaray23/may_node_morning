@@ -1,0 +1,4 @@
+About Node js:
+---------------
+It is a async,single thread and non bloking i/o.
+->Node js use crome's v8 engine.
