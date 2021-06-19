@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "city_name":"Delhi",
+        "city":1,
+        "country_name":"India"
+
+    },
+    {
+        "id":2,
+        "city_name":"Hydrabad",
+        "city":2,
+        "country_name":"India"
+
+    },
+    {
+        "id":3,
+        "city_name":"Bangalore",
+        "city":3,
+        "country_name":"India"
+
+    },
+    {
+        "id":4,
+        "city_name":"Chennai",
+        "city":4,
+        "country_name":"India"
+
+    }
+]
