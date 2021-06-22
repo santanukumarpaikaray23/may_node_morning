@@ -1,6 +1,5 @@
-var express = require('express');
-var app = express();
-var port=9000;
+var express = require ('express')
+var hotelRouter = express.Router();
 
 hotels = [{
 	"id" : "6360",
@@ -156,76 +155,16 @@ hotels = [{
 }],
 
 
-city = [
-    {
-		"id": 1,
-		"name": "Delhi",
-		"country_id": 1,
-		"country_name": "India",
-		"country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_1.png",
-	},
-    {
-		"id": 3,
-		"name": "Mumbai",
-		"country_id": 1,
-		"country_name": "India",
-		"country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_1.png",
-		
-    },
-    {
-		"id": 280,
-		"name": "New York City, NY",
-		"country_id": 216,
-		"country_name": "United States",
-		"country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_216.png",
-		
-    },
-    {
-        "id": 32,
-		"name": "Pune",
-		"country_id": 1,
-		"country_name": "India",
-		"country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_1.png",
-	        
-	},
-	{
-		"id": 77,
-		"name": "Chandigrah",
-		"country_id": 1,
-		"country_name": "India",
-		"country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_1.png",
-	
-	},
-    {
-		"id": 4,
-		"name": "Bangalore",
-		"country_id": 1,
-		"country_name": "India",
-		"country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_1.png",
-    }
-]
 
-app.get('/',function(req,res){
-    res.send("Hi from express")
-})
-app.get('/city',function(req,res){
-    res.send(city)
 
+hotelRouter.route('/')
+.get(function(req,res){
+    // res.send(hotels)
+	res.render('hotel',{title:'Hotels Page'})
 })
-app.get('/details',function(req,res){
-    res.send('cityDetails')
+hotelRouter.route('/details')
+.get(function(req,res){
+    res.send('hotel details')
 })
-app.get('/hotels',function(req,res){
-    res.send(hotels)
 
-})
-app.get('/details',function(req,res){
-    res.send('hotelDetails')
-
-})
-app.listen(port,function(err){
-    if(err)throw err;
-    else{
-        console.log("app is running on port"+port)
-    }
-})
+module.exports = hotelRouter
